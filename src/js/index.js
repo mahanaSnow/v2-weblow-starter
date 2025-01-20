@@ -7,4 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
   initPageRouter();
 });
 
-console.log("Hello, Vite!");
+console.log("Hello, Viiiiiite!");
+document.addEventListener("DOMContentLoaded", () => {
+ 
+  const allElements = document.querySelectorAll("*");
+
+  allElements.forEach((element) => {
+    element.style.border = "1px solid blue";
+  });
+
+  console.log("Tous les éléments ont une bordure rouge !");
+});
