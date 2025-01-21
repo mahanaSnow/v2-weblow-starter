@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 import { VFX } from "@vfx-js/core";
 
-const img = document.querySelector(".img-svg");
-
+const imgs = document.querySelectorAll("img");
 const vfx = new VFX();
-img.forEach((img) => {
+
+imgs.forEach((img) => {
   vfx.add(img, { shader: "glitch", overflow: 100 });
 });
