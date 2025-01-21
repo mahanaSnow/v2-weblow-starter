@@ -7,14 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   initPageRouter();
 });
 
-console.log("Hello, Viiiiiite!");
-document.addEventListener("DOMContentLoaded", () => {
- 
-  const allElements = document.querySelectorAll("*");
+import { VFX } from "@vfx-js/core";
 
-  allElements.forEach((element) => {
-    element.style.border = "1px solid blue";
-  });
+const img = document.querySelector(".img-svg");
 
-  console.log("Tous les éléments ont une bordure rouge !");
+const vfx = new VFX();
+img.forEach((img) => {
+  vfx.add(img, { shader: "glitch", overflow: 100 });
 });
