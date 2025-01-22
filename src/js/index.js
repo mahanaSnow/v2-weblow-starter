@@ -2,16 +2,17 @@
 
 import "../styles/index.css";
 import { initPageRouter } from "./utils/pageRouter";
+import gsap from "gsap";
+import { Draggable } from "gsap/Draggable";
 
 document.addEventListener("DOMContentLoaded", () => {
   initPageRouter();
 });
+gsap.registerPlugin(Draggable);
 
-import { VFX } from "@vfx-js/core";
-
-const imgs = document.querySelectorAll("img");
-const vfx = new VFX();
-
-imgs.forEach((img) => {
-  vfx.add(img, { shader: "glitch", overflow: 100 });
+Draggable.create("#Drag", {
+  bounds: ".moodboard",
+  inertia: true,
 });
+
+console.log("drag");

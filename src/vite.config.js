@@ -28,6 +28,8 @@ export default defineConfig({
   server: {
     cors: "*",
     hmr: {},
+    host: true, // Ajouté pour Replit
+    allowedHosts: [".replit.dev", "replit.dev", "*.replit.dev"], // Ajouté pour Replit
   },
   build: {
     minify: true,
@@ -43,11 +45,9 @@ export default defineConfig({
     },
   },
   envDir: "../",
-
-  // Add alias for better path resolution
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), // Alias '@' maps to 'src'
+      "@": path.resolve(__dirname, "src"),
       "@animations": path.resolve(__dirname, "src/js/animations"),
       "@components": path.resolve(__dirname, "src/js/components"),
       "@pages": path.resolve(__dirname, "src/js/pages"),
